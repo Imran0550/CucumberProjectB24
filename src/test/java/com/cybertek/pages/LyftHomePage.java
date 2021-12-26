@@ -17,6 +17,8 @@ public class LyftHomePage {
     @FindBy(xpath = "//button[@type = 'submit']") public WebElement estimateButton;
 
     @FindBy(xpath = "//h3[contains(text(),'RIDE TYPES')]") public WebElement rideInfo;
+    @FindBy(xpath = "//table/tbody/tr[1]/td[3]") public WebElement rideCost;
+    @FindBy(xpath = "//small[.='Please select a valid location.']") public WebElement errorMessage;
 
 
     public void enterPickUpLocation(String pickUp){
@@ -34,4 +36,11 @@ public class LyftHomePage {
 
         return false;
     }
+
+    public String totalCost(){
+
+        return rideCost.getText().substring(0,6);
+    }
+
+
 }

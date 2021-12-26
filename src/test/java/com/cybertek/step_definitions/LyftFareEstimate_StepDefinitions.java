@@ -49,7 +49,14 @@ public class LyftFareEstimate_StepDefinitions {
     @Then("user should be able to see estimate")
     public void user_should_be_able_to_see_estimate() {
 
-        System.out.println(page.isAvailable());
+        System.out.println(page.rideTypes());
 
+        System.out.println(page.totalCost());
+
+    }
+
+    @Then("user should see error message")
+    public void userShouldSeeErrorMessage() {
+        assertTrue("Error message is not displayed", page.errorMessage.isDisplayed());
     }
 }
