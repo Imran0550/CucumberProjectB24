@@ -24,7 +24,7 @@ And User clicks on "7" on calculator
 Then result "56" should be displayed
 
 Scenario: Dividing
-Given User clicks on "8" on calculator
+Given User clicks on "10" on calculator
 And User clicks on "/" on calculator
 And User clicks on "2" on calculator
-Then result "4" should be displayed
+Then result "5" should be displayed

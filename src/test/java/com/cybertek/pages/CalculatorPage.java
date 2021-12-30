@@ -18,8 +18,22 @@ public class CalculatorPage {
     public void clickOn(String button){
 
 
-        WebElement elem = Driver.getDriver().findElement(By.xpath("//span[.='"+button+"']"));
-        elem.click();
+        if(button.length()>1){
+
+            String [] arr = button.split("");
+
+            for(String each : arr){
+                WebElement elem = Driver.getDriver().findElement(By.xpath("//span[.='"+each+"']"));
+                elem.click();
+            }
+
+        }else {
+            WebElement elem = Driver.getDriver().findElement(By.xpath("//span[.='"+button+"']"));
+            elem.click();
+        }
+
+
+
 
     }
 
