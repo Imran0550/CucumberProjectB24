@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CalculatorPage {
 
     public CalculatorPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

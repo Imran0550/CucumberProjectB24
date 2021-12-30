@@ -12,11 +12,13 @@ public class CalculatorStepDefs {
     CalculatorPage calculatorPage = new CalculatorPage();
     @Given("User is on calculator page")
     public void user_is_on_calculator_page() {
+        System.out.println("User is on calculator page");
         Driver.getDriver().get(ConfigurationReader.getProperty("calculator.url"));
     }
 
     @Given("User clicks on {string} on calculator")
     public void user_clicks_on_on_calculator(String buttonText) {
+        System.out.println("User clicks on {"+buttonText+"}");
 
        calculatorPage.clickOn(buttonText);
 
@@ -24,6 +26,8 @@ public class CalculatorStepDefs {
 
     @Then("result {string} should be displayed")
     public void result_should_be_displayed(String string) {
+
+        System.out.println("result should be {"+string+"}");
 
 
         Assert.assertEquals(string,calculatorPage.getResult());
