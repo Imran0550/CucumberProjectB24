@@ -58,15 +58,18 @@ public class Google_StepDefinitions {
     }
 
     @When("User searches for {string} capital")
-    public void userSearchesForCapital(String capital) {
+    public void userSearchesForCapital(String countryName) {
 
-        googleSearchPage.searchBar.sendKeys("what is capital city of " + capital + Keys.ENTER);
+        System.out.println("Searching for capital city of " + countryName);
+        googleSearchPage.searchBar.sendKeys("what is capital city of " + countryName + Keys.ENTER);
     }
 
     @Then("User should see {string} in the result")
-    public void userShouldSeeInTheResult(String result) {
+    public void userShouldSeeInTheResult(String capitalCity) {
 
-        Assert.assertTrue("title doesn't contains the country name",Driver.getDriver().getTitle().contains(result));
+
+        Assert.assertEquals(googleSearchPage.searchResultText.getText(),capitalCity);
+
 
     }
 

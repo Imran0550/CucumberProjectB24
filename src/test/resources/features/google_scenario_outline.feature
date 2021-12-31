@@ -9,10 +9,11 @@
       Then User should see "<capital>" in the result
       Examples:
         | country| capital|
-        | USA    | Washington DC |
+        | USA    | Washington, D.C. |
         | Turkey | Ankara |
         | Ukraine| Kyiv |
         | Turkmenistan| Ashgabat |
         | Latvia | Riga |
         | Uzbekistan | Tashkent |
         | Eritrea | Asmara |
+        | Afghanistan | Kabul |
