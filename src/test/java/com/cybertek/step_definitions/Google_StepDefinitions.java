@@ -12,6 +12,8 @@ import java.util.List;
 
 public class Google_StepDefinitions {
 
+    GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
     @Given("User is on Google home page")
     public void user_is_on_google_home_page() {
 
@@ -23,7 +25,6 @@ public class Google_StepDefinitions {
     @When("User searches for apple")
     public void user_searches_for_apple() {
 
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.searchBar.sendKeys("apple" + Keys.ENTER);
 
     }
@@ -55,4 +56,19 @@ public class Google_StepDefinitions {
         }
 
     }
+
+    @When("User searches for {string} capital")
+    public void userSearchesForCapital(String capital) {
+
+        googleSearchPage.searchBar.sendKeys("what is capital city of " + capital + Keys.ENTER);
+    }
+
+    @Then("User should see {string} in the result")
+    public void userShouldSeeInTheResult(String result) {
+
+        Assert.assertTrue("title doesn't contains the country name",Driver.getDriver().getTitle().contains(result));
+
+    }
+
+
 }
