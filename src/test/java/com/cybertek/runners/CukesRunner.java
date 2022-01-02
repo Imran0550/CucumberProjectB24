@@ -9,12 +9,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {
-                "html:target/cucumber-report.html"
+                "html:target/cucumber-report.html",
+                "rerun:target/rerun.txt", //store failed scenarios names into rerun.txt file
+                "json:target/cucumber.json" // generate json execution report to be used for html report
         },
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
-        tags = "@cloudtable"
+        tags = "@php"
 )
 public class CukesRunner {
 }
