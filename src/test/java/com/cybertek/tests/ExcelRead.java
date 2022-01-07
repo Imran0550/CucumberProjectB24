@@ -11,10 +11,10 @@ public class ExcelRead {
     @Test
     public void readingFromExcel() throws IOException {
         //Open excel workbook using XSSFWorkBook class
-            XSSFWorkbook workbook = new XSSFWorkbook("Employees.xlsx");
+            XSSFWorkbook workbook = new XSSFWorkbook("Employee2.xlsx");
 
             //Goto worksheet. pass the worksheet name
-        XSSFSheet xssfSheet = workbook.getSheet("data");
+        XSSFSheet xssfSheet = workbook.getSheet("sheet1");
 
         //print mike from the sheet
         System.out.println(xssfSheet.getRow(1).getCell(0));

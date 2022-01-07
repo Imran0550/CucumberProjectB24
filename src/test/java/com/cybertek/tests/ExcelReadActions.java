@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 public class ExcelReadActions {
-    String filePath = "Employees.xlsx";
+    String filePath = "Employee2.xlsx";
 
     @Test
     public void readExcelSheetData() throws IOException {
