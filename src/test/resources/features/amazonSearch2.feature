@@ -1,3 +1,4 @@
+@smoke
 Feature: user searches for multiple things on amazon website
 
   Scenario: searching multiple things on amazon

@@ -1,3 +1,4 @@
+@smoke
 Feature: Search something on Amazon
   As a user, I should be able to search an item on Amazon website
 
