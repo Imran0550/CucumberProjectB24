@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class VyTrackDashboardPage extends BasePage {
 
-    @FindBy(xpath = "//li[@id ='user-menu']/a[contains(text(),'John Doe')]")
+    @FindBy(xpath = "//li[@id ='user-menu']/a")
     public WebElement fullName;
 
     @FindBy(xpath = "//a[.='Logout']")
