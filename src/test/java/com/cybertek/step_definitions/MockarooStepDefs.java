@@ -26,10 +26,11 @@ public class MockarooStepDefs {
 
     MockarooPage mockarooPage = new MockarooPage();
     int excelRowCount = 0;
-
+    String filePath = System.getProperty("user.home")+ "/Downloads/MOCK_DATA.xlsx";
     @Given("User is on mockaroo homepage")
     public void user_is_on_mockaroo_homepage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("mockaroo.url"));
+
     }
 
     @Given("Number of rows is {int}")
@@ -90,6 +91,7 @@ public class MockarooStepDefs {
 
         //open downloaded excel file
         String filePath = System.getProperty("user.home") + "/Downloads/MOCK_DATA.xlsx";
+        //open excel workbook and sheet
         ExcelUtil excelUtil = new ExcelUtil(filePath,0);
         Assert.assertEquals(expectedColumns,excelUtil.getColumnsNames());
 //        String filePath = System.getProperty("user.home") + "/Downloads/MOCK_DATA.xlsx";
@@ -132,5 +134,15 @@ public class MockarooStepDefs {
 //        int rowCount = sheet.getLastRowNum();
 //
 //        Assert.assertEquals(expectedRowCount,rowCount);
+    }
+
+    @And("data should be present excel file")
+    public void dataShouldBePresentExcelFile() {
+
+        //open excel file, read data and print values
+
+        ExcelUtil excel = new ExcelUtil(filePath,0);
+
+        System.out.print(excel.getDataList());
     }
 }
